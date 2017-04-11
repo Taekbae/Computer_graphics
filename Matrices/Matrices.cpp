@@ -99,6 +99,8 @@ HRESULT InitGeometry()
     // Initialize three vertices for rendering a triangle
     CUSTOMVERTEX g_Vertices[] =
     {
+		// 위의 4면
+
         { -1.0f,-1.0f, -1.0f, 0xffBCFF66, }, //R
         {  1.0f,-1.0f, -1.0f, 0xffBCFF66, }, //B
         {  0.0f, 1.0f, 0.0f, 0xffCBFF75, }, //W
@@ -115,7 +117,7 @@ HRESULT InitGeometry()
 		{ -1.0f,-1.0f, -1.0f, 0xff64CD3C, }, //B
 		{ 0.0f, 1.0f, 0.0f, 0xff6ED746, }, //W
 
-		//
+		// 아래의 4면
 
 		{ -1.0f,-1.0f, -1.0f, 0xff82EB5A, }, //R
 		{ 0.0f, -4.0f, 0.0f, 0xff82EB5A, }, //B
@@ -188,7 +190,7 @@ VOID SetupMatrices()
     // floating point numbers, the system time is modulated by the rotation 
     // period before conversion to a radian angle.
     UINT iTime = timeGetTime() % 1000;
-    FLOAT fAngle = iTime * ( 1.0f * D3DX_PI ) / 1000.0f;
+    FLOAT fAngle = iTime * ( 2.0f * D3DX_PI ) / 1000.0f;
     D3DXMatrixRotationY( &matWorld, fAngle );
     g_pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld );
 
